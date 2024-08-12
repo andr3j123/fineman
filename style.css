@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  margin: 0;
+  background-color: #3f3f3f;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat";
+  color: white;
+}
+
+/* Navbar style */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #282828;
+  padding: 10px;
+}
+.redToDashboard {
+  text-decoration: none;
+  padding: 25px 10px 25px 10px;
+  color: white;
+}
+
+/* Bubble style */
+
+.bubble-right {
+  background-color: #607d8b;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 50px 50px 50%;
+  padding: 25px;
+  border-radius: 5px;
+}
+.bubble-left {
+  background-color: #607d8b;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 50% 50px 50px;
+  padding: 25px;
+  border-radius: 5px;
+}
+.bubble-title {
+  font-size: 2em;
+}
+
+/* Add new expense form */
+.welcomeMsg {
+  padding: 15px;
+}
+
+.addNewForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+.expenseName {
+  padding: 5px;
+  width: 300px;
+  border: none;
+  border-radius: 2px;
+}
+.expenseName:focus {
+  outline: none;
+}
+.expensePrice {
+  padding: 5px;
+  width: 75px;
+  border: none;
+  border-radius: 2px;
+}
+.expensePrice:focus {
+  outline: none;
+}
+.expenseDate {
+  padding: 4px;
+  width: 100px;
+  border: none;
+  border-radius: 2px;
+}
+.expenseDate:focus {
+  outline: none;
+}
+.submitBtn {
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Expense list */
+
+.expenseList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 34%;
+  margin-right: 34%;
+  background-color: #607d8b;
+  height: 600px;
+  padding: 25px;
+  border-radius: 2px;
+  overflow-y: scroll;
+}
+.searchContainer,
+.tables,
+.expense {
+  width: 100%;
+}
+.searchExpense {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 15px;
+}
+.searchExpense:focus {
+  outline: none;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+/* Collections */
+
+.collectionsTitle {
+  margin-top: 100px;
+  margin-left: 15px;
+  text-decoration: underline;
+}
+.createCollectionBtn {
+  margin-top: 25px;
+  margin-left: 15px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+}
+.collectionCardsList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  padding: 15px;
+}
+.collectionCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 200px;
+  height: 350px;
+  background-color: #607d8b;
+  padding: 25px;
+  border-radius: 5px;
+  text-align: center;
+}
+.collectionCardBtn {
+  padding: 5px;
+  cursor: pointer;
+  width: 100px;
+  text-decoration: none;
+  color: white;
+  font-size: larger;
+}
+.cardText {
+  height: 500px;
+  text-align: center;
+}
+.target {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  font-size: 1.5em;
+}
+
+/* Log in form */
+
+.loginFormContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+.logInForm {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  background-color: #607d8b;
+  border-radius: 5px;
+}
+.logInLabels {
+  margin-top: 10px;
+}
+.logInInput {
+  padding: 5px;
+  width: 300px;
+  border: none;
+  border-radius: 2px;
+}
+.logInInput:focus {
+  outline: none;
+}
+.logInBtn {
+  margin-top: 50px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.functionAnchorTag {
+  color: white;
+}
+
+/* Create new collection */
+
+.createCollectionContainer {
+  display: flex;
+  justify-content: center;
+  height: 400px;
+  margin-top: 15%;
+  margin-left: 42%;
+  margin-right: 40%;
+}
+.createCollectionForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.collectionName {
+  width: 250px;
+  height: 25px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 2px;
+}
+.collectionName:focus {
+  outline: none;
+}
+.collectionDisc {
+  width: 250px;
+  height: 100px;
+  resize: none;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 2px;
+}
+.collectionDisc:focus {
+  outline: none;
+}
+.collectionTarget {
+  width: 75px;
+  height: 25px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+.collectionTarget:focus {
+  outline: none;
+}
+.createCollectionBtnContainer {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0px;
+  width: 100%;
+}
+.createBtn {
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100px;
+  margin-right: 10%;
+}
+.goBackBtn,
+.deleteBtn {
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100px;
+}
+
+/* collections */
+
+.collectionBtns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+}
+.deleteBtn {
+  color: red;
+}
+
+/* Confirm */
+
+.confirmDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.deleteConfirmBtn {
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 15px;
+  color: red;
+}
