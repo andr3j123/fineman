@@ -7,6 +7,22 @@ if(!isset($_SESSION['user_id'])){
     header("Location: login.php?error=session_expired");
     exit();
 }
+
+// Expense search
+
+include "./backend/dbConn.php";
+
+$query = isset($_GET['searchExpense']) ? $_GET['searchExpense'] : '';
+
+if (!empty($query)){
+    $stmt = $conn->prepare("SELECT * FROM expenses WHERE expenseName LIKE ? OR expensePrice LIKE ?");
+    $searchTerm = "%" . $query . "%";
+    $stmt->bind_param("ss", $searchTerm, $searchTerm);
+    
+    $stmt->execute();
+    $result = $stmt->get_result();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +63,24 @@ if(!isset($_SESSION['user_id'])){
                     <th>Price</th>
                     <th>Date</th>
                 </tr>
-                <?php include "./backend/readExpenses.php"; ?>
+                <?php
+
+                    // Checks if user typed something into search bar. If user typed something it will display it either by name or price, otherwise it will display everything.
+
+                    if (!isset($_GET['searchExpense']) || empty($_GET['searchExpense'])){
+                        include "./backend/readExpenses.php";
+                    }
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<tr class="expenseContent">
+                                <td>'. htmlspecialchars($row['expenseName']) .'</td>
+                                <td>'. htmlspecialchars($row['expensePrice']) .'€</td>
+                                <td>'. htmlspecialchars($row['expenseDate']) .'</td>
+                            </tr>';
+                        }
+                    }
+                ?>
             </table>
         </div>
     </div>
