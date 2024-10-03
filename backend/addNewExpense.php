@@ -17,5 +17,4 @@ $stmt->bind_param("isds", $_SESSION['user_id'], $expenseName, $expensePrice, $ex
 $stmt->execute();
 $stmt->close();
 
-header("Location: ../dashboard.php")
-?>
+header("Location: ../dashboard.php");

@@ -18,4 +18,3 @@ $stmt->close();
 
 header("Location: ../collection.php?id=". $_POST["collection_id"]);
 exit();
-?>

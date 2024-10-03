@@ -11,15 +11,30 @@ if($result->num_rows < 0){
     echo '<p>You have no collections.</p>';
 }
 while($row = $result->fetch_assoc()){
-    echo '<div class="collectionCard">
-                <div class="cardText">
-                    <h3 class="collectionName">'. $row['collectionName'] .'</h3>
-                    <p class="collectionDesc">'. $row['collectionDescription'] .'</p>
-                </div>
-                <p class="target">'. $row['collectionTarget'] .'€</p>
-                <a class="collectionCardBtn" href="./collection.php?id='. $row['collections_id'] .'">Enter</a>
-            </div>';
+    if ($row['isDone'] !== 1) {
+        echo '
+        <div class="collectionCard">
+            <div class="cardText">
+                <h3 class="collectionName">'. $row['collectionName'] .'</h3>
+                <p class="collectionDesc">'. $row['collectionDescription'] .'</p>
+            </div>
+
+            <p class="target">'. $row['collectionTarget'] .'€</p>
+            <a class="collectionCardBtn" href="./collection.php?id='. $row['collections_id'] .'">Enter</a>
+        </div>';
+    }
+    else {
+        echo '
+        <div class="collectionCard">
+            <div class="cardText">
+                <h3 class="collectionName">'. $row['collectionName'] .'</h3>
+                <p class="collectionDesc">'. $row['collectionDescription'] .'</p>
+            </div>
+
+            <p class="target" style="text-decoration: line-through">'. $row['collectionTarget'] .'€</p>
+            <a class="collectionCardBtn" href="./collection.php?id='. $row['collections_id'] .'">Enter</a>
+            <a class="deleteBtn" href="./confirm.php?id='. $row['collections_id'] .'">Delete</a>
+        </div>';
+    }
+    
 }
-
-
-?>

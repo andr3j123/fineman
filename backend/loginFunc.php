@@ -36,5 +36,3 @@ if (password_verify($password, $storedHashedPassword)) {
 
 header("Location: ../login.php?error=incorrect_credentials");
 exit();
-
-?>

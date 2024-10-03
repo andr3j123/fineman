@@ -15,5 +15,3 @@ if($conn->query($stmt)){
 
 header("Location: ./collection.php?id=". $_GET['id']."?error=could-not-delete-collection");
 exit();
-
-?>

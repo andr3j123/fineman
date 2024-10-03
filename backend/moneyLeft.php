@@ -32,5 +32,3 @@ else{
     // Display the result
     echo '<p class="moneyLeft">You have ' . $moneyLeft . '€ left</p>';
 }
-
-?>

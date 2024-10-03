@@ -45,5 +45,3 @@ $_SESSION['firstLastName'] = $firstLastName;
 
 header("Location: ../dashboard.php");
 exit();
-
-?>

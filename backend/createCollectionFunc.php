@@ -19,6 +19,3 @@ $stmt->close();
 
 header('Location: ../dashboard.php?collectionCreated');
 exit();
-
-
-?>
